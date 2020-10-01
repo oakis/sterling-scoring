@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/sterling-scoring/static/css/main.86daacd4.chunk.css",
-    "main.js": "/sterling-scoring/static/js/main.d31a29b0.chunk.js",
-    "main.js.map": "/sterling-scoring/static/js/main.d31a29b0.chunk.js.map",
+    "main.js": "/sterling-scoring/static/js/main.f9cbc999.chunk.js",
+    "main.js.map": "/sterling-scoring/static/js/main.f9cbc999.chunk.js.map",
     "runtime-main.js": "/sterling-scoring/static/js/runtime-main.b0476105.js",
     "runtime-main.js.map": "/sterling-scoring/static/js/runtime-main.b0476105.js.map",
     "static/js/2.211422f0.chunk.js": "/sterling-scoring/static/js/2.211422f0.chunk.js",
     "static/js/2.211422f0.chunk.js.map": "/sterling-scoring/static/js/2.211422f0.chunk.js.map",
     "index.html": "/sterling-scoring/index.html",
-    "precache-manifest.a0fc90ef6764337408f7f526d2b62bc9.js": "/sterling-scoring/precache-manifest.a0fc90ef6764337408f7f526d2b62bc9.js",
+    "precache-manifest.c5a612d4794026e26669676a47732a9d.js": "/sterling-scoring/precache-manifest.c5a612d4794026e26669676a47732a9d.js",
     "service-worker.js": "/sterling-scoring/service-worker.js",
     "static/css/main.86daacd4.chunk.css.map": "/sterling-scoring/static/css/main.86daacd4.chunk.css.map",
     "static/js/2.211422f0.chunk.js.LICENSE.txt": "/sterling-scoring/static/js/2.211422f0.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.b0476105.js",
     "static/js/2.211422f0.chunk.js",
     "static/css/main.86daacd4.chunk.css",
-    "static/js/main.d31a29b0.chunk.js"
+    "static/js/main.f9cbc999.chunk.js"
   ]
 }
