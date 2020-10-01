@@ -1,0 +1,13 @@
+.App {
+  background-color: transparent;
+}
+
+.lane-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.lane {
+  width: 24%;
+}
