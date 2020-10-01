@@ -1,4 +1,4 @@
-.App {
+.overlay-wrapper {
   background-color: transparent;
 }
 
@@ -9,5 +9,5 @@
 }
 
 .lane {
-  width: 24%;
+  width: 25%;
 }
