@@ -43,8 +43,6 @@ function SetupView() {
       });
   }, []);
 
-  console.log(alleys);
-
   const selectAlley = (e) => {
     e.preventDefault();
     setSelectedAlley(e.target.value);
