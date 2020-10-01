@@ -9,7 +9,7 @@ function SetupView() {
   const [selectedFrom, setSelectedFrom] = useState("");
   const [selectedTo, setSelectedTo] = useState("");
 
-  const selectedUrl = `${window.location.origin}/#/${selectedAlley}/${selectedFrom}/${selectedTo}/`;
+  const selectedUrl = `${window.location.origin}/sterling-scoring/#/${selectedAlley}/${selectedFrom}/${selectedTo}/`;
 
   useEffect(() => {
     fetch("https://api.lanetalk.com/v1/bowlingcenters/", {
