@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "efc80f4e4000d849d72d3fa09a03e47f",
+    "revision": "8d5673796d05e09f79c6a5400f792c01",
     "url": "/sterling-scoring/index.html"
   },
   {
-    "revision": "17f80c19838f1d288ca5",
+    "revision": "951f5b2fd393419ec09f",
     "url": "/sterling-scoring/static/css/main.f474bda5.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sterling-scoring/static/js/2.ae81d8d7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "17f80c19838f1d288ca5",
-    "url": "/sterling-scoring/static/js/main.4562df55.chunk.js"
+    "revision": "951f5b2fd393419ec09f",
+    "url": "/sterling-scoring/static/js/main.3cf5fad0.chunk.js"
   },
   {
     "revision": "c2f0bc2f4f3ee2d74861",
