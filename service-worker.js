@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/sterling-scoring/precache-manifest.79c356c653cd3a96f2895277ff64c339.js"
+  "/sterling-scoring/precache-manifest.ded9732c26a96d5392d46624bb265ef8.js"
 );
 
 self.addEventListener('message', (event) => {
