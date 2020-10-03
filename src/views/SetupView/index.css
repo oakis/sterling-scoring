@@ -2,12 +2,20 @@
   display: flex;
   flex-direction: column;
   padding: 10%;
+  background-color: whitesmoke;
 }
 
 label {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 4px;
+}
+
+select,
+button {
+  border-radius: 3px;
+  border: 1px solid grey;
+  background-color: white;
 }
 
 select {
@@ -18,4 +26,6 @@ select {
 button {
   padding: 8px;
   margin-right: 12px;
+  background-color: palegreen;
+  font-size: 16px;
 }
