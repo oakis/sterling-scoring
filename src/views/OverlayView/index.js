@@ -1,32 +1,87 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useCallback, useEffect, useState } from "react";
+import { useParams, useLocation } from "react-router-dom";
 import "./index.css";
 
 function OverlayView() {
-  setTimeout(() => {
-    window.location.reload();
-  }, 5000);
-
   const [fromLaneNumber, setFromLaneNumber] = useState();
   const [toLaneNumber, setToLaneNumber] = useState();
+  const [selectedLanes, setSelectedLanes] = useState([]);
+  const [counter, setCounter] = useState(0);
 
   const { alley, fromLane, toLane } = useParams();
+  const location = useLocation();
+
+  const debugMode = location?.search.includes("?debug");
+
+  const resetLanes = useCallback(() => {
+    if (debugMode) console.log("Reset lanes");
+    setFromLaneNumber(0);
+    setToLaneNumber(0);
+  }, [debugMode]);
+
+  const setLanes = useCallback(() => {
+    if (debugMode) console.log("Set lanes", fromLane, toLane);
+
+    const newFrom = parseInt(fromLane, 10);
+    const newTo = parseInt(toLane, 10);
+    setFromLaneNumber(newFrom);
+    setToLaneNumber(newTo);
+  }, [fromLane, toLane, debugMode]);
 
   useEffect(() => {
-    setFromLaneNumber(parseInt(fromLane, 10));
-    setToLaneNumber(parseInt(toLane, 10));
-  }, [fromLane, toLane]);
+    if (fromLaneNumber === 0 || toLaneNumber === 0) return;
 
-  const numberOfLanes = Math.abs(fromLaneNumber - toLaneNumber);
+    const numberOfLanes = toLaneNumber - fromLaneNumber;
 
-  let selectedLanes = [];
-  for (let index = 0; index <= numberOfLanes; index++) {
-    selectedLanes.push(fromLaneNumber + index);
-  }
+    if (debugMode)
+      console.log(
+        "Number of lanes:",
+        numberOfLanes + 1,
+        " - From Lane/To Lane",
+        fromLaneNumber,
+        toLaneNumber
+      );
+
+    setSelectedLanes(() => {
+      let result = [];
+      for (let index = 0; index <= numberOfLanes; index++) {
+        result.push(fromLaneNumber + index);
+      }
+      return result;
+    });
+  }, [debugMode, fromLaneNumber, toLaneNumber]);
+
+  useEffect(() => {
+    if (debugMode) {
+      console.log("Selected lanes:", selectedLanes);
+      setCounter((prev) => prev + 1);
+    }
+  }, [selectedLanes, debugMode]);
+
+  useEffect(() => {
+    setLanes();
+  }, [fromLane, toLane, setLanes]);
+
+  useEffect(() => {
+    const refresh = setInterval(() => {
+      resetLanes();
+      setLanes();
+    }, 5000);
+    return () => {
+      clearInterval(refresh);
+    };
+  }, [resetLanes, setLanes]);
 
   return (
     <div className="overlay-wrapper">
-      <div className="lane-wrapper">
+      <div
+        className="lane-wrapper"
+        style={
+          selectedLanes.length % 4 === 0
+            ? { justifyContent: "space-evenly" }
+            : { justifyContent: "space-between" }
+        }
+      >
         {selectedLanes.map((lane) => (
           <img
             key={lane}
@@ -35,6 +90,9 @@ function OverlayView() {
             src={`https://scoring.lanetalk.com/upload/${alley}/VTVFile${lane}.jpg`}
           />
         ))}
+        {debugMode === true ? (
+          <div className="debug-counter">{counter}</div>
+        ) : null}
       </div>
     </div>
   );
