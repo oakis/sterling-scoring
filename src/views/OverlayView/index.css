@@ -11,11 +11,11 @@
   width: 25%;
 }
 
-.debug-counter {
+.debug-indicator {
   font-size: 16px;
   font-weight: bolder;
   background-color: tomato;
   padding: 16px;
   margin-top: 8px;
-  border-radius: 50%;
+  border-radius: 8px;
 }

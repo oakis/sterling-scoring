@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useParams, useLocation } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 import "./index.css";
 
 function OverlayView() {
   const [fromLaneNumber, setFromLaneNumber] = useState();
   const [toLaneNumber, setToLaneNumber] = useState();
   const [selectedLanes, setSelectedLanes] = useState([]);
-  const [counter, setCounter] = useState(0);
 
   const { alley, fromLane, toLane } = useParams();
   const location = useLocation();
@@ -54,7 +54,6 @@ function OverlayView() {
   useEffect(() => {
     if (debugMode) {
       console.log("Selected lanes:", selectedLanes);
-      setCounter((prev) => prev + 1);
     }
   }, [selectedLanes, debugMode]);
 
@@ -87,11 +86,11 @@ function OverlayView() {
             key={lane}
             className="lane"
             alt={lane}
-            src={`https://scoring.lanetalk.com/upload/${alley}/VTVFile${lane}.jpg`}
+            src={`https://scoring.lanetalk.com/upload/${alley}/VTVFile${lane}.jpg#${uuidv4()}`}
           />
         ))}
         {debugMode === true ? (
-          <div className="debug-counter">{counter}</div>
+          <div className="debug-indicator">{uuidv4()}</div>
         ) : null}
       </div>
     </div>
