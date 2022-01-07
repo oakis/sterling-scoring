@@ -13,11 +13,11 @@ function OverlayView() {
 
   const debugMode = location?.search.includes("?debug");
 
-  const resetLanes = useCallback(() => {
-    if (debugMode) console.log("Reset lanes");
-    setFromLaneNumber(0);
-    setToLaneNumber(0);
-  }, [debugMode]);
+  // const resetLanes = useCallback(() => {
+  //   if (debugMode) console.log("Reset lanes");
+  //   setFromLaneNumber(0);
+  //   setToLaneNumber(0);
+  // }, [debugMode]);
 
   const setLanes = useCallback(() => {
     if (debugMode) console.log("Set lanes", fromLane, toLane);
@@ -61,15 +61,21 @@ function OverlayView() {
     setLanes();
   }, [fromLane, toLane, setLanes]);
 
+  // useEffect(() => {
+  //   const refresh = setInterval(() => {
+  //     resetLanes();
+  //     setLanes();
+  //   }, 5000);
+  //   return () => {
+  //     clearInterval(refresh);
+  //   };
+  // }, [resetLanes, setLanes]);
+
   useEffect(() => {
-    const refresh = setInterval(() => {
-      resetLanes();
-      setLanes();
+    setTimeout(() => {
+      window.location.reload();
     }, 5000);
-    return () => {
-      clearInterval(refresh);
-    };
-  }, [resetLanes, setLanes]);
+  }, []);
 
   return (
     <div className="overlay-wrapper">
